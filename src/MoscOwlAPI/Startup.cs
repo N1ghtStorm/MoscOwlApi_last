@@ -13,6 +13,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MoscOwlAPI.Data;
+using MoscOwlAPI.Data.Repositories.Extensions;
+using MoscOwlAPI.Services.Extensions;
 
 namespace MoscOwlAPI
 {
@@ -34,6 +36,8 @@ namespace MoscOwlAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
             });
             services.AddDbContext<OwlDbContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("OwlDbPostgres")));
+            services.AddRepositoryLayer();
+            services.AddServiceLayer();
         }
 
 

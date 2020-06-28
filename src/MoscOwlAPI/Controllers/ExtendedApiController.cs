@@ -25,7 +25,7 @@ namespace MoscOwlAPI.Controllers
             catch(Exception e)
             {
                 //todo error handling
-                return BadRequest();
+                return BadRequest(e.Message);
             }
         }
     }
