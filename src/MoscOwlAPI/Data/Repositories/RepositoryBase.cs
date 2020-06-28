@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MoscOwlAPI.Data.Repositories
 {
-    public class RepositiryBase
+    public class RepositoryBase
     {
         protected async Task ProcessQuery(Func<Task> query)
         {

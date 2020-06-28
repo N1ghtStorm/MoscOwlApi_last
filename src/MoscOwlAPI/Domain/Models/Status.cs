@@ -10,5 +10,7 @@ namespace MoscOwlAPI.Domain.Models
         public int StatusId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+
+        public ICollection<MemberTournament> MemberTournaments { get; set; }
     }
 }

@@ -33,7 +33,7 @@ namespace MoscOwlAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
             });
-            services.AddDbContext<OwlDbContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("QwlDbPostgres")));
+            services.AddDbContext<OwlDbContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("OwlDbPostgres")));
         }
 
 
