@@ -15,6 +15,8 @@ using Microsoft.OpenApi.Models;
 using MoscOwlAPI.Data;
 using MoscOwlAPI.Data.Repositories.Extensions;
 using MoscOwlAPI.Services.Extensions;
+using Newtonsoft.Json;
+
 
 namespace MoscOwlAPI
 {
@@ -30,7 +32,7 @@ namespace MoscOwlAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });

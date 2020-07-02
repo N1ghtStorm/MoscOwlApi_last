@@ -1,4 +1,5 @@
 ﻿using MoscOwlAPI.Data;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,15 @@ namespace MoscOwlAPI.Domain.Models
         public int? OwlScore { get; set; }
         public int? StatusId { get; set; }
 
+        [JsonIgnore]
         public Status Status { get; set; }
         public int TournamentId { get; set; }
+
+        [JsonIgnore]
         public Tournament Tournament { get; set; }
         public int MemberId { get; set; }
+
+        [JsonIgnore]
         public Member Member { get; set; }
     }
 }

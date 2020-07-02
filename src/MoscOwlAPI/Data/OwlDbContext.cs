@@ -17,7 +17,8 @@ namespace MoscOwlAPI.Data
         public DbSet<Season> Seasons { get; set; }
         public DbSet<MemberTournament> MemberTournaments { get; set; }
 
-
+        //add relation between entity and view
+        public DbSet<MemberSeason> MemberSeasons { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -36,6 +37,7 @@ namespace MoscOwlAPI.Data
                         .Property(p => p.Score)
                         .IsRequired();
 
+            //add relation between entity and view
             modelBuilder.Entity<MemberSeason>()
                         .HasNoKey()
                         .ToView("MemberSeasonView");

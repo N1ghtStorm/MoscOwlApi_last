@@ -15,6 +15,7 @@ namespace MoscOwlAPI.Data
         [JsonRequired]
         public string Surname { get; set; }
 
+        [JsonIgnore]
         public ICollection<MemberTournament> MemberTournaments { get; set; }
     }
 }
